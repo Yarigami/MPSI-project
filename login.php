@@ -16,13 +16,14 @@
 <body>
   <!-- main -->
   <div class="main-w3layouts wrapper">
-    <h1>Login Admin</h1>
+    <h1>Admin Login</h1>
     <div class="main-agileinfo">
       <div class="agileits-top">
         <form action="proses_login.php" method="post">
           <input class="text" type="text" name="username" placeholder="Username" required=""><br>
         
           <input class="text" type="password" name="password" placeholder="Password" required="">
+          <!-- <input class="text" type="text" name="password" placeholder="Admin ID" required=""> -->
           <div class="wthree-text">
             <label class="anim">
             </label>
