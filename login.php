@@ -23,7 +23,6 @@
           <input class="text" type="text" name="username" placeholder="Username" required=""><br>
         
           <input class="text" type="password" name="password" placeholder="Password" required="">
-          <!-- <input class="text" type="text" name="password" placeholder="Admin ID" required=""> -->
           <div class="wthree-text">
             <label class="anim">
             </label>
@@ -34,21 +33,6 @@
       
       </div>
     </div>
-    <!-- copyright -->
-    <!-- //copyright -->
-    <ul class="colorlib-bubbles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
   </div>
-  <!-- //main -->
 </body>
 </html>

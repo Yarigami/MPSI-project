@@ -17,10 +17,6 @@ error_reporting(0);
     <!-- Title Page-->
     <title>Ubah Data</title>
 
-       
-  
-
-
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">

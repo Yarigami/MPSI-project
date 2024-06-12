@@ -47,7 +47,6 @@ while ($row=mysqli_fetch_array($data_karyawan)) {
                                                 <td><?php echo $row['alamat']; ?></td>
                                                 <td><?php echo $row['no_tel']; ?></td>
                                                 <td><?php echo $row['jabatan']; ?></td>
-                                                    <td><img src="images/<?php echo $row['foto'];?>" ></td>
 
 
 

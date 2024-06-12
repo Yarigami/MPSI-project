@@ -84,7 +84,6 @@ error_reporting(0);
                             <a class="js-arrow" href="admin2.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                
                             </ul>
                         </li>
                         <li>
@@ -108,8 +107,6 @@ error_reporting(0);
                                 <i class="fas fa-table"></i>data Keterangan
                             </a>
                         </li>
-                       
-                       
                     </ul>
                 </div>
             </nav>

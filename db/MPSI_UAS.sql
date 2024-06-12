@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 21, 2020 at 07:38 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Host: 127.0.0.1
+-- Generation Time: Jun 11, 2024 at 03:29 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,16 +32,7 @@ CREATE TABLE `tb_absen` (
   `id_karyawan` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `waktu` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_absen`
---
-
-INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `waktu`) VALUES
-(16, '1920392912', 'Budi Sanjaya', 'Thursday, 10-09-2020 07:52:25 am'),
-(17, '192', 'Sarah Mutia', 'Thursday, 10-09-2020 07:54:45 am'),
-(18, '9', 'Abdul Muhlisin Sudirman', 'Sunday, 20-09-2020 01:31:05 pm');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -53,7 +44,7 @@ CREATE TABLE `tb_daftar` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_daftar`
@@ -72,7 +63,7 @@ INSERT INTO `tb_daftar` (`id`, `username`, `password`) VALUES
 CREATE TABLE `tb_jabatan` (
   `id` int(11) NOT NULL,
   `jabatan` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_jabatan`
@@ -85,7 +76,8 @@ INSERT INTO `tb_jabatan` (`id`, `jabatan`) VALUES
 (6, 'WP Pemasaran'),
 (7, 'CMO'),
 (8, 'COO'),
-(9, 'Office Boy');
+(9, 'Office Boy'),
+(11, 'Worker');
 
 -- --------------------------------------------------------
 
@@ -96,7 +88,6 @@ INSERT INTO `tb_jabatan` (`id`, `jabatan`) VALUES
 CREATE TABLE `tb_karyawan` (
   `id_karyawan` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `tmp_tgl_lahir` varchar(255) NOT NULL,
   `jenkel` varchar(255) NOT NULL,
@@ -105,17 +96,15 @@ CREATE TABLE `tb_karyawan` (
   `no_tel` varchar(18) NOT NULL,
   `jabatan` varchar(255) NOT NULL,
   `foto` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_karyawan`
 --
 
-INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
-(9, 'Abdul', 'd41d8cd98f00b204e9800998ecf8427e', 'Abdul Muhlisin Sudirman', 'Klaten / 19-09-1994', 'Laki-laki', 'Islam', 'China', '0895635721923', 'CEO', '21092020072509employee1.png'),
-(192, 'sarah', '9e9d7a08e048e9d604b79460b54969c3', 'Sarah Mutia', 'Cianjur / 10-12-1992', 'Perempuan', 'Islam', '', '08128384848', 'CEO', '10092020025112employee3.png'),
-(999999999, 'bagas', 'ee776a18253721efe8a62e4abd29dc47', 'bagas a', 'Jakarta / 10-01-1990', 'Laki-laki', 'Islam', 'Jakarta', '0895628383333', 'Office Boy', '10092020024120employee3.png'),
-(1920392912, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'Budi Sanjaya', 'Bekasi / 10-12-1980', 'Laki-laki', 'Kristen', '', '0895254859994', 'CEO', '10092020023942employee1.png');
+INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
+(1234578, 'karyawan1', 'karyawan1', 'Brazil', 'Laki-laki', 'KongHuCu', 'Mord Brazil', '12345678', 'CEO', ''),
+(87654321, 'karyawan2', 'karyawan2', 'Brazil 2', 'Perempuan', 'Katholik', 'Brazil 2', '87654321', 'CEO', '');
 
 -- --------------------------------------------------------
 
@@ -129,17 +118,15 @@ CREATE TABLE `tb_keterangan` (
   `nama` varchar(255) NOT NULL,
   `keterangan` varchar(255) NOT NULL,
   `alasan` text NOT NULL,
-  `waktu` varchar(255) NOT NULL,
-  `bukti` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `waktu` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_keterangan`
 --
 
-INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`, `waktu`, `bukti`) VALUES
-(51, '9', 'Abdul Muhlisin', 'Sakit', 'Saya Sakit Pak', 'Thursday, 10-09-2020 07:53:23 am', '10092020025339suratket1.png'),
-(52, '999999999', 'bagas a', 'Izin', 'Mohon maaf bapak / ibu, untuk hari ini saya tidak bisa hadir, dikarenakan saya izin.', 'Thursday, 10-09-2020 07:55:20 am', '10092020025619suratket2.jpg');
+INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`, `waktu`) VALUES
+(75, '12345678', '', 'sakit', 'batuk', 'Monday, 10-06-2024 04:39:48 pm');
 
 --
 -- Indexes for dumped tables
@@ -183,7 +170,7 @@ ALTER TABLE `tb_keterangan`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `tb_daftar`
@@ -195,13 +182,13 @@ ALTER TABLE `tb_daftar`
 -- AUTO_INCREMENT for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_keterangan`
 --
 ALTER TABLE `tb_keterangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
