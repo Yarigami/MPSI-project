@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2024 at 03:29 PM
+-- Generation Time: Jun 12, 2024 at 02:26 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `karyawansi`
+-- Database: `mpsi_uas`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +33,14 @@ CREATE TABLE `tb_absen` (
   `nama` varchar(255) NOT NULL,
   `waktu` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_absen`
+--
+
+INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `waktu`) VALUES
+(66, '1234578', 'karyawan1', 'Tuesday, 11-06-2024 03:49:59 pm'),
+(67, '87654321', 'karyawan2', 'Wednesday, 12-06-2024 01:21:11 pm');
 
 -- --------------------------------------------------------
 
@@ -103,8 +111,8 @@ CREATE TABLE `tb_karyawan` (
 --
 
 INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
-(1234578, 'karyawan1', 'karyawan1', 'Brazil', 'Laki-laki', 'KongHuCu', 'Mord Brazil', '12345678', 'CEO', ''),
-(87654321, 'karyawan2', 'karyawan2', 'Brazil 2', 'Perempuan', 'Katholik', 'Brazil 2', '87654321', 'CEO', '');
+(1234578, 'karyawan1', 'karyawan1', 'Brazil', 'Laki-laki', 'KongHuCu', 'Mord Brazil', '12345678', 'WP Pemasaran', ''),
+(87654321, 'karyawan2', 'karyawan2', 'Brazil 2', 'Perempuan', 'Katholik', 'Brazil 2', '8765432', 'CEO', '');
 
 -- --------------------------------------------------------
 
@@ -170,7 +178,7 @@ ALTER TABLE `tb_keterangan`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `tb_daftar`
@@ -182,7 +190,7 @@ ALTER TABLE `tb_daftar`
 -- AUTO_INCREMENT for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_keterangan`
